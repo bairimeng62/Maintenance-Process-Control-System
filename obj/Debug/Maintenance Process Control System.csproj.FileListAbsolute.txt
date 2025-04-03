@@ -1,0 +1,123 @@
+D:\计算机程序\Maintenance Process Control System\bin\Debug\Maintenance Process Control System.exe.config
+D:\计算机程序\Maintenance Process Control System\bin\Debug\Maintenance Process Control System.exe
+D:\计算机程序\Maintenance Process Control System\bin\Debug\Maintenance Process Control System.pdb
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.csproj.AssemblyReference.cache
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\MainView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\App.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System_MarkupCompile.cache
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System_MarkupCompile.lref
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\MainView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.g.resources
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance_Process_Control_System.Properties.Resources.resources
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.csproj.GenerateResource.cache
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.csproj.CoreCompileInputs.cache
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.exe
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.pdb
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Style\ButtonStyles.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Style\UIColors.baml
+D:\计算机程序\Maintenance Process Control System\bin\Debug\FontAwesome.Sharp.dll
+D:\计算机程序\Maintenance Process Control System\obj\Debug\App.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\Maintenance Process Control System.csproj.CopyComplete
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\LoginView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\LoginView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\CustomerView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\CustomerView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\manageCarView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\manageOverhaulView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\manageUserView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairCurrentView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairHistoryView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairTargetView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\techCarView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\techEnterView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\techFaultView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\manageCarView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\manageOverhaulView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\manageUserView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairCurrentView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairHistoryView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairTargetView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\techCarView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\techEnterView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\techFaultView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\ManagerView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\RepairView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\TechnicianView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\ManagerView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\RepairView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\View\TechnicianView.baml
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairSelfView.g.cs
+D:\计算机程序\Maintenance Process Control System\obj\Debug\ChildView\repairSelfView.baml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\app.db
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\Maintenance Process Control System.exe.config
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\Maintenance Process Control System.exe
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\Maintenance Process Control System.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\EntityFramework.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\EntityFramework.SqlServer.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\FontAwesome.Sharp.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\System.Data.SQLite.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\System.Data.SQLite.EF6.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\System.Data.SQLite.Linq.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\EntityFramework.xml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\EntityFramework.SqlServer.xml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\System.Data.SQLite.xml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Style\ButtonStyles.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Style\UIColors.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\manageCarView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\manageOverhaulView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\manageUserView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\repairTargetView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\techCarView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\techEnterView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\techFaultView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\CustomerView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\LoginView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\MainView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\ManagerView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\RepairView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\TechnicianView.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\App.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System_MarkupCompile.cache
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System_MarkupCompile.lref
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\App.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\manageCarView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\manageOverhaulView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\manageUserView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\repairTargetView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\techCarView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\techEnterView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\techFaultView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\ChildView\CustomerView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\LoginView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\MainView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\ManagerView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\RepairView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\View\TechnicianView.baml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System.g.resources
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance_Process_Control_System.Properties.Resources.resources
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System.csproj.GenerateResource.cache
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System.csproj.CoreCompileInputs.cache
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System.csproj.CopyComplete
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System.exe
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\LiveCharts.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\LiveCharts.Wpf.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\LiveCharts.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\LiveCharts.xml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\LiveCharts.Wpf.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\LiveCharts.Wpf.xml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\CommonServiceLocator.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\System.Windows.Interactivity.dll
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.xml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\Maintenance Process Control System_Content.g.cs
+D:\计算机程序\Maintenance Process Control System 1\bin\Debug\DatabaseScripts\data.sql

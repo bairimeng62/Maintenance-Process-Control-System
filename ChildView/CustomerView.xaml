@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Maintenance_Process_Control_System.View.CustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Maintenance_Process_Control_System.View" 
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--功能栏-->
+            <RowDefinition Height="50"/>
+            <!--datagrid-->
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--功能栏-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="340"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                <fa:IconImage Icon="Home"
+                              Height="18"
+                              Width="18"
+                              Foreground="{StaticResource titleColor5}"
+                              Margin="10,10,10,0"/>
+
+                <TextBlock Text="目标任务"
+                           Foreground="{StaticResource titleColor5}"
+                           FontSize="14"
+                           FontWeight="Black"
+                           Margin="0,10,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Grid.Column="1">
+                <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
+
+                <TextBox Text="搜索.." Style="{StaticResource searchTextbox}"/>
+
+                <Button Grid.Column="1"
+                    Command="{Binding }"
+                    Content="搜   索"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource searchButton}"
+                    Margin="20 0 0 0"/>
+
+            </StackPanel>
+
+            
+        </Grid>
+        
+        <!--datagrid-->
+        <Border Grid.Row="1"
+                Background="#FFFFFF"
+                CornerRadius="10" 
+                Padding="10">
+
+            <DataGrid ColumnWidth="*"
+                      Background="#FFFFFF"
+                      BorderThickness="0"
+                      ColumnHeaderStyle="{StaticResource DataGridColumnHeader}">
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="ID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="First name"/>
+                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Last name"/>
+                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Phone"/>
+                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Number"/>
+                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Address"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="Maintenance_Process_Control_System.ChildView.repairTargetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Maintenance_Process_Control_System.ChildView" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:converters="clr-namespace:Maintenance_Process_Control_System.Converters" 
+             mc:Ignorable="d" 
+             d:DesignHeight="605" d:DesignWidth="1060">
+
+    <UserControl.Resources>
+        <!-- 文本转换器 -->
+        <converters:ManagerCarStatusConverter x:Key="ManagerCarStatusConverter"/>
+        <!-- 颜色转换器 -->
+        <converters:ManagerCarStatusColorConverter x:Key="ManagerCarStatusColorConverter"/>
+        
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--功能栏-->
+            <RowDefinition Height="50"/>
+            
+            <!--datagrid-->
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--功能栏-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="340"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                <fa:IconImage Icon="Table"
+                              Height="18"
+                              Width="18"
+                              Foreground="{StaticResource titleColor5}"
+                              Margin="10,10,10,0"/>
+
+                <TextBlock Text="代办任务"
+                           Foreground="{StaticResource titleColor5}"
+                           FontSize="14"
+                           FontWeight="Black"
+                           Margin="0,10,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Grid.Column="1">
+                <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
+
+                <TextBox Name="txtSearch" 
+                         Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource searchTextbox}"/>
+
+                <Button Command="{Binding SearchCommand}"
+                        Content="搜   索"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource searchButton}"
+                        Margin="20 0 0 0"/>
+
+            </StackPanel>
+        </Grid>
+
+        <!--datagrid-->
+        <Border Grid.Row="1"
+                Background="#FFFFFF"
+                CornerRadius="10" 
+                Padding="10">
+
+            <DataGrid ItemsSource="{Binding ManagerCars}"
+                      Style="{StaticResource DataGridStyle1}"
+                      ColumnHeaderStyle="{StaticResource DataGridColumnHeader}"
+                      RowStyle="{StaticResource DataGridRow}"
+                      CellStyle="{StaticResource DataGridCell}"
+                      AutoGenerateColumns="False">
+
+                <DataGrid.Resources>
+                    <!-- 操作图标转换器 -->
+                    <converters:StatusToStartButtonVisibility x:Key="StatusToStartButtonVisibility"/>
+                    <converters:StatusToCompleteButtonVisibility x:Key="StatusToCompleteButtonVisibility"/>
+                </DataGrid.Resources>
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}"  Header="编号" Width="40"/>
+                    <DataGridTextColumn Binding="{Binding Number,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="机车编号"/>
+                    <DataGridTextColumn Binding="{Binding Part1,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="一级部位"/>
+                    <DataGridTextColumn Binding="{Binding Part2,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="二级部位"/>
+                    <DataGridTextColumn Binding="{Binding Part3,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="三级部位"/>
+                    <DataGridTextColumn Binding="{Binding Note,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="受损现象" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding ManHours,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="工时" Width="40"/>
+                    <DataGridTextColumn Binding="{Binding Team,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,TargetNullValue='--'}"  Header="班组" Width="40"/>
+                    <DataGridTextColumn Binding="{Binding StartTime,StringFormat='yyyy-MM-dd HH:mm',Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,TargetNullValue='--'}"   Header="开始时间"/>
+                    
+                    <!-- 状态列（带颜色） -->
+                    <DataGridTemplateColumn Header="状态" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Status, Converter={StaticResource ManagerCarStatusConverter}}"
+                                   Foreground="{Binding Status, Converter={StaticResource ManagerCarStatusColorConverter}}"
+                                           FontWeight="Black"/>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Binding="{Binding OverTime,StringFormat='yyyy-MM-dd HH:mm',Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,TargetNullValue='--'}"  Header="结束时间"/>
+
+                    <!-- 操作列 -->
+                    <DataGridTemplateColumn Header="操作" Width="40">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <!-- 开始-->
+                                    <Button  Command="{Binding DataContext.StartRepairCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource IconActionButton}"
+                                             Visibility="{Binding Status, Converter={StaticResource StatusToStartButtonVisibility}}"
+                                            Tag="#9396F7">
+                                        <fa:IconImage Icon="Play" Width="16" Height="16"/>
+                                    </Button>
+
+                                    <!-- 结束-->
+                                    <Button  Command="{Binding DataContext.CompleteRepairCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource IconActionButton}"
+                                             Visibility="{Binding Status, Converter={StaticResource StatusToCompleteButtonVisibility}}"
+                                            Tag="#9396F7">
+                                        <fa:IconImage Icon="stop" Width="16" Height="16"/>
+                                    </Button>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+    </Grid>
+</UserControl>

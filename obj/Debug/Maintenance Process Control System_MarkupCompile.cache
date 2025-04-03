@@ -1,0 +1,20 @@
+﻿Maintenance Process Control System
+
+
+winexe
+C#
+.cs
+D:\计算机程序\Maintenance Process Control System 1\obj\Debug\
+Maintenance_Process_Control_System
+none
+false
+DEBUG;TRACE
+D:\计算机程序\Maintenance Process Control System 1\App.xaml
+151524282800
+1257433787
+47461529339
+1331657344120
+ChildView\manageCarView.xaml;ChildView\manageOverhaulView.xaml;ChildView\manageUserView.xaml;ChildView\repairTargetView.xaml;ChildView\techCarView.xaml;ChildView\techEnterView.xaml;ChildView\techFaultView.xaml;Style\ButtonStyles.xaml;Style\UIColors.xaml;ChildView\CustomerView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ManagerView.xaml;View\RepairView.xaml;View\TechnicianView.xaml;
+
+False
+

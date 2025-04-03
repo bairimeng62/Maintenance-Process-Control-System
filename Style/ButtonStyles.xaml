@@ -1,0 +1,969 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+
+    <!--菜单按键-->
+    <Style x:Key="menuButton" TargetType="RadioButton">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="-5 0 0 5"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource plainTextColor3}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background }"
+                            BorderThickness="4 0 0 0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+        <Style.Triggers>
+            <!--鼠标移动，背景颜色-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0 0 0 5"/>
+                <Setter Property="Foreground" Value="{StaticResource titleColor3}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource titleColor3}"/>
+            </Trigger>
+
+            <!--鼠标点击，背景颜色-->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Margin" Value="0 0 0 5"/>
+                <Setter Property="Foreground" Value="{StaticResource titleColor5}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource titleColor5}"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--菜单图标-->
+    <Style x:Key="menuButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
+        <Setter Property="Width" Value="22"/>
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Margin" Value="35 0 20 0"/>
+
+
+    </Style>
+
+    <!--菜单文本-->
+    <Style x:Key="menuButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="FontSize" Value="13.5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+
+    <!--导航按键模板(放大 最小 关闭)-->
+    <Style x:Key="controlButton" TargetType="Button">
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource titleColor4}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background }"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="4">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <!--鼠标移动，背景颜色-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=Tag,RelativeSource={RelativeSource Self}}"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--导航图标-->
+    <Style x:Key="controlButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="11"/>
+        <Setter Property="Height" Value="11"/>
+    </Style>
+
+
+    <!--菜单底部图标按键模板-->
+    <Style x:Key="iconButton" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource plainTextColor1}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background }">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+        <Style.Triggers>
+            <!--鼠标移动，背景颜色-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=Tag,RelativeSource={RelativeSource Self}}"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--菜单底部图标-->
+    <Style x:Key="iconButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="18"/>
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="Margin" Value="0 0 5 0"/>
+    </Style>
+
+
+    <!-- ComboBox techFault样式 -->
+    <Style x:Key="FaultComboBoxstyle" TargetType="{x:Type ComboBox}" >
+        <Setter Property="Background" Value="#F7F7F7"/>
+
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <!--ComBoxItem-->
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="MinHeight" Value="30"/>
+                    <Setter Property="MinWidth" Value="180"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Border Name="Back" Background="#F7F7F7"  BorderThickness="0,0,0,0" BorderBrush="#F7F7F7" >
+                                    <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="#B9BDC5"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsHighlighted" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="LightGray"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="1"  
+                            CornerRadius="5" 
+                            Width="180" 
+                            Height="30" 
+                            Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" x:Name="grid">
+                                <ToggleButton
+                                        Width="{Binding ElementName=grid,Path=ActualWidth}"
+                                        Height="{Binding ElementName=grid, Path=ActualHeight}"
+                                        Content="{TemplateBinding Text}" VerticalAlignment="Center"
+                                        HorizontalAlignment="Left" Margin="5,0,0,0"
+                                        BorderThickness="1"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        Background="{TemplateBinding Background}"
+                                        IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"
+                                        >
+                                    <ToggleButton.Style >
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="Background" Value="White"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Border   Background="{TemplateBinding Background}" BorderThickness="0"  >
+                                                            <TextBlock Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Content}" Margin="4 0 0 0"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="White"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="White"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Grid>
+
+                            <Grid Grid.Column="1" >
+                                <ToggleButton IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      Foreground="{TemplateBinding Foreground}"
+                                                      ClickMode="Press">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="Background" Value="#F7F7F7"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Border Background="{TemplateBinding Background}" 
+                                                                BorderThickness="{TemplateBinding BorderThickness}">
+                                                            <Grid>
+                                                                <fa:IconImage x:Name="arrow_tb"
+                                                                                Icon="angledown"  
+                                                                                Foreground="{TemplateBinding Foreground}"
+                                                                                Width="12"
+                                                                                Height="12"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center"
+                                                                                RenderTransformOrigin="0.5,0.5">
+                                                                    <fa:IconImage.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform/>
+                                                                            <SkewTransform/>
+                                                                            <RotateTransform/>
+                                                                            <!-- 动画将修改此旋转角度 -->
+                                                                            <TranslateTransform/>
+                                                                        </TransformGroup>
+                                                                    </fa:IconImage.RenderTransform>
+                                                                </fa:IconImage>
+                                                            </Grid>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked" Value="True">
+
+                                                            </Trigger>
+                                                            <EventTrigger RoutedEvent="Checked">
+                                                                <BeginStoryboard>
+                                                                    <Storyboard >
+                                                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="arrow_tb" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="180"/>
+                                                                        </DoubleAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </EventTrigger>
+
+                                                            <EventTrigger RoutedEvent="Unchecked">
+                                                                <BeginStoryboard>
+                                                                    <Storyboard >
+                                                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="arrow_tb" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="180"/>
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                                                                        </DoubleAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </EventTrigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Grid>
+                            <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
+                                <Border CornerRadius="1" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="0"/>
+                                    </Border.Effect>
+                                    <ScrollViewer Margin="4,6,4,6" Style="{DynamicResource ScrollViewerStyle}" MaxHeight="{TemplateBinding MaxDropDownHeight}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                                        <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#F7F7F7"/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+    </Style>
+
+
+    <!-- ComboBox techEnter 样式 -->
+    <Style x:Key="ComboBoxstyle" TargetType="{x:Type ComboBox}" >
+        <Setter Property="Background" Value="#F7F7F7"/>
+        
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <!--ComBoxItem-->
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="MinHeight" Value="30"/>
+                    <Setter Property="MinWidth" Value="180"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Border Name="Back" Background="#F7F7F7"  BorderThickness="0,0,0,0" BorderBrush="#F7F7F7" >
+                                    <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="#B9BDC5"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsHighlighted" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="LightGray"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="1"  
+                            CornerRadius="5" 
+                            Width="200" 
+                            Height="30" 
+                            Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" x:Name="grid">
+                                <ToggleButton
+                                        Width="{Binding ElementName=grid,Path=ActualWidth}"
+                                        Height="{Binding ElementName=grid, Path=ActualHeight}"
+                                        Content="{TemplateBinding Text}" VerticalAlignment="Center"
+                                        HorizontalAlignment="Left" Margin="5,0,0,0"
+                                        BorderThickness="1"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        Background="{TemplateBinding Background}"
+                                        IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"
+                                        >
+                                    <ToggleButton.Style >
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="Background" Value="White"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Border   Background="{TemplateBinding Background}" BorderThickness="0"  >
+                                                            <TextBlock Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Content}" Margin="4 0 0 0"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="White"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="White"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Grid>
+
+                            <Grid Grid.Column="1" >
+                                <ToggleButton IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      Foreground="{TemplateBinding Foreground}"
+                                                      ClickMode="Press">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="Background" Value="#F7F7F7"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Border Background="{TemplateBinding Background}" 
+                                                                BorderThickness="{TemplateBinding BorderThickness}">
+                                                            <Grid>
+                                                                <fa:IconImage x:Name="arrow_tb"
+                                                                                Icon="angledown"  
+                                                                                Foreground="{TemplateBinding Foreground}"
+                                                                                Width="12"
+                                                                                Height="12"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center"
+                                                                                RenderTransformOrigin="0.5,0.5">
+                                                                    <fa:IconImage.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform/>
+                                                                            <SkewTransform/>
+                                                                            <RotateTransform/>
+                                                                            <!-- 动画将修改此旋转角度 -->
+                                                                            <TranslateTransform/>
+                                                                        </TransformGroup>
+                                                                    </fa:IconImage.RenderTransform>
+                                                                </fa:IconImage>
+                                                            </Grid>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked" Value="True">
+
+                                                            </Trigger>
+                                                            <EventTrigger RoutedEvent="Checked">
+                                                                <BeginStoryboard>
+                                                                    <Storyboard >
+                                                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="arrow_tb" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="180"/>
+                                                                        </DoubleAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </EventTrigger>
+
+                                                            <EventTrigger RoutedEvent="Unchecked">
+                                                                <BeginStoryboard>
+                                                                    <Storyboard >
+                                                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="arrow_tb" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="180"/>
+                                                                            <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                                                                        </DoubleAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </EventTrigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Grid>
+                            <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
+                                <Border CornerRadius="1" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="0"/>
+                                    </Border.Effect>
+                                    <ScrollViewer Margin="4,6,4,6" Style="{DynamicResource ScrollViewerStyle}" MaxHeight="{TemplateBinding MaxDropDownHeight}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                                        <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#F7F7F7"/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+    </Style>
+
+    <!-- TextBox 样式 -->
+    <Style x:Key="TextBoxstyle" TargetType="TextBox" >
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="#F7F7F7"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                    VerticalAlignment="Center"
+                                    Margin="{TemplateBinding Padding}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="#5974C8"/>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="#5974C8"/>
+                <Setter Property="Background" Value="#FFFFFF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    
+    <!--入库按键样式-->
+    <Style x:Key="SubmitButton" TargetType="Button">
+        <Setter Property="Background" Value="#5974C8"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="8">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4569C9"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--DatePicker-->
+    <Style x:Key="DatePickerStyle1" TargetType="{x:Type DatePicker}">
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTodayHighlighted" Value="True"/>
+        <Setter Property="SelectedDateFormat" Value="Short"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DatePicker}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="5">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_DisabledVisual"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        
+                        <Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Stretch"  >
+                            <Grid.Resources>
+                                <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF"/>
+                                <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type Button}">
+                                    <Grid Background="#BBBBBB" FlowDirection="LeftToRight" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="20" Height="20" >
+                                        <Path Fill="#5974C8"  HorizontalAlignment="Center"  Stretch="Fill" VerticalAlignment="Center"  Data="M 890.127 145.672 h -43.389 V 132.78 c 0 -38.644 -31.466 -70.234 -69.922 -70.234 h -1.032 c -38.458 0 -69.922 31.59 -69.922 70.234 v 12.892 h -386.7 V 132.78 c 0 -38.644 -31.465 -70.234 -69.922 -70.234 h -1.063 c -38.457 0 -69.923 31.59 -69.923 70.234 v 12.892 h -43.296 c -38.458 0 -69.923 31.622 -69.923 70.207 v 671.446 c 0 38.644 31.466 70.236 69.923 70.236 h 755.17 c 38.458 0 69.922 -31.592 69.922 -70.236 V 215.879 c 0 -38.585 -31.464 -70.207 -69.923 -70.207 Z M 733.83 132.78 c 0 -23.222 18.793 -42.139 41.954 -42.139 h 1.032 c 23.13 0 41.954 18.918 41.954 42.139 v 124.927 c 0 23.224 -18.824 42.14 -41.954 42.14 h -1.032 c -23.161 0 -41.954 -18.916 -41.954 -42.14 V 132.779 Z m -527.607 0 c 0 -23.222 18.793 -42.139 41.955 -42.139 h 1.063 c 23.098 0 41.954 18.918 41.954 42.139 v 124.927 c 0 23.224 -18.856 42.14 -41.954 42.14 h -1.063 c -23.162 0 -41.955 -18.916 -41.955 -42.14 V 132.779 Z m 683.904 768.626 H 134.958 c -7.585 0 -13.985 -6.525 -13.985 -14.08 V 393.649 h 783.138 v 493.676 c 0 7.555 -6.399 14.08 -13.984 14.08 Z" />
+                                        <Path Fill="#e0e1f1" Margin="7" HorizontalAlignment="Center" Stretch="Fill" VerticalAlignment="Center"  Data="M 223.755 494.2 H 352.78 v 63.488 H 223.755 V 494.2 Z M 449.035 494.2 h 128 v 63.488 h -128 V 494.2 Z M 673.291 494.2 h 125.952 v 63.488 H 673.291 V 494.2 Z M 223.755 623.224 H 352.78 v 62.464 H 223.755 v -62.464 Z M 449.035 623.224 h 128 v 62.464 h -128 v -62.464 Z M 673.291 623.224 h 125.952 v 62.464 H 673.291 v -62.464 Z M 223.755 749.176 H 352.78 v 65.536 H 223.755 v -65.536 Z M 449.035 749.176 h 128 v 65.536 h -128 v -65.536 Z M 673.291 749.176 h 125.952 v 65.536 H 673.291 v -65.536 Z" StrokeThickness="2"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Grid.Resources>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Center" Width="30"/>
+                            <DatePickerTextBox x:Name="PART_TextBox" Grid.Column="0"  Foreground="{TemplateBinding Foreground}" Focusable="{TemplateBinding Focusable}" HorizontalContentAlignment="Stretch" Grid.Row="0" VerticalContentAlignment="Center" Style="{DynamicResource DatePickerTextBoxStyle1}" Background="{x:Null}" Margin="0,0,0,0" />
+                            <Grid x:Name="PART_DisabledVisual" Grid.ColumnSpan="2" Grid.Column="0" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Grid.Column="0" Fill="#A5FFFFFF" RadiusY="1" Grid.Row="0" RadiusX="1"/>
+                                <Rectangle Grid.Column="1" Fill="#A5FFFFFF" Height="32" Margin="3,0,3,0" RadiusY="1" Grid.Row="0" RadiusX="1" Width="32"/>
+                                <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <!--姓名搜索输入框-->
+    <Style x:Key="searchTextbox1" TargetType="TextBox">
+        <!-- 原有样式保留 -->
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="130"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="5 3 0 2"/>
+        <Setter Property="Margin" Value="8 0 0 0"/>
+        <Setter Property="Background" Value="#ffffff"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="BorderBrush" Value="{StaticResource plainTextColor3}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource plainTextColor3}"/>
+        <Setter Property="Foreground" Value="{StaticResource titleColor5}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <!-- 输入框背景 -->
+                        <Border x:Name="border" 
+                            CornerRadius="12" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                    Focusable="True" 
+                                    HorizontalScrollBarVisibility="Hidden"
+                                    VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <!-- 占位符文本 -->
+                        <TextBlock x:Name="placeholderText"
+                               Text="姓名..."
+                               Foreground="{StaticResource plainTextColor3}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Visibility="Collapsed"
+                               IsHitTestVisible="False"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!-- 显示/隐藏占位符 -->
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="placeholderText" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+
+                        <!-- 悬停/聚焦边框颜色 -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource color1}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource color1}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--编号搜索输入框-->
+    <Style x:Key="searchTextbox" TargetType="TextBox">
+        <!-- 原有样式保留 -->
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="5 3 0 2"/>
+        <Setter Property="Margin" Value="8 0 0 0"/>
+        <Setter Property="Background" Value="#ffffff"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="BorderBrush" Value="{StaticResource plainTextColor3}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource plainTextColor3}"/>
+        <Setter Property="Foreground" Value="{StaticResource titleColor5}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <!-- 输入框背景 -->
+                        <Border x:Name="border" 
+                            CornerRadius="12" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                    Focusable="True" 
+                                    HorizontalScrollBarVisibility="Hidden"
+                                    VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <!-- 占位符文本 -->
+                        <TextBlock x:Name="placeholderText"
+                               Text="机车编号..."
+                               Foreground="{StaticResource plainTextColor3}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Visibility="Collapsed"
+                               IsHitTestVisible="False"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!-- 显示/隐藏占位符 -->
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="placeholderText" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+
+                        <!-- 悬停/聚焦边框颜色 -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource color1}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource color1}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--搜索按键-->
+    <Style x:Key="searchButton" TargetType="Button">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="{StaticResource color12}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Height="30" CornerRadius="15" 
+                            Background="{TemplateBinding Background}">
+                        
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource color1}"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+    
+    <!--批量删除-->
+    <Style x:Key="BatchDelete" TargetType="Button">
+        <Setter Property="Background"  Value="#5974C8"/> 
+        <Setter Property="Foreground"  Value="White"/>
+        <Setter Property="FontSize"  Value="13"/>
+        <Setter Property="Height"  Value="30"/>
+        <Setter Property="Width"  Value="90"/>
+        <Setter Property="Margin"  Value="10"/>
+        <Setter Property="Cursor"  Value="Hand"/>
+        <Setter Property="FontWeight"  Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4569C9"/>
+                <!-- 悬停颜色 -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--新增记录-->
+    <Style x:Key="AddButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#55C128"/>
+        <!-- 主色调 -->
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <!-- 默认文本 -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!-- 悬停效果 -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#45A01D"/>
+                <!-- 稍深的绿色 -->
+            </Trigger>
+            <!-- 按下效果 -->
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#3C8F17"/>
+                <!-- 更深的绿色 -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--DataGridStyle1-->
+    <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="Foreground" Value="#222528"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="SelectionUnit" Value="FullRow"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="CanUserDeleteRows" Value="False"/>
+        <Setter Property="CanUserResizeColumns" Value="False"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <Setter Property="ColumnWidth" Value="*"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <Setter Property="GridLinesVisibility" Value="None"/>
+    </Style>
+
+    <!--DataGridColumnHeader-->
+    <Style x:Key="DataGridColumnHeader" TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#082478"/>
+        <Setter Property="Padding" Value="10,0,0,10"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!--DataGridRow-->
+    <Style x:Key="DataGridRow" TargetType="DataGridRow">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#EAEAEA"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderThickness" Value="0 0 0 2"/>
+        <Setter Property="Cursor"  Value="Hand"/>
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#EFEFEF"/>
+            </Trigger>
+
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#E6E6E6"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+
+            <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                <Setter Property="BorderBrush" Value="#9396F7"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Background" Value="#F8FAFF"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- DataGridCell-->
+    <Style x:Key="DataGridCell" TargetType="DataGridCell">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+        <!-- 合并后的模板定义 -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderThickness="0" 
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                        <!-- 内容强制居中 -->
+                        <ContentPresenter 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- 选中状态样式 -->
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Background" Value="#E8E8E8"/>
+                <!-- 可选：选中时轻微高亮 -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Datagrid操作栏按钮-->
+    <Style x:Key="IconActionButton" TargetType="Button">
+        <!-- 基础样式 -->
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- 图标颜色绑定到 Tag -->
+        <Style.Resources>
+            <Style TargetType="fa:IconImage">
+                <Setter Property="Foreground" Value="{Binding Tag, RelativeSource={RelativeSource AncestorType=Button}}"/>
+            </Style>
+        </Style.Resources>
+
+        <!-- 悬停和点击效果 -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F0F3FF"/>
+                <!-- 悬停背景色 -->
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#E2E6FF"/>
+                <!-- 按下背景色 -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+</ResourceDictionary>
